@@ -15,6 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Shader\GrayscaleNibblet.ps.hlsl">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Icon.ico" />
   </ItemGroup>
 
@@ -23,6 +29,7 @@
     <PackageReference Include="LoadingIndicators.WPF.NetCore" Version="1.0.1" />
     <PackageReference Include="MahApps.Metro" Version="2.4.11" />
     <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="6.2.1" />
+    <PackageReference Include="Vortice.D3DCompiler" Version="3.8.1" />
     <PackageReference Include="Vortice.Direct3D11" Version="3.8.1" />
   </ItemGroup>
 

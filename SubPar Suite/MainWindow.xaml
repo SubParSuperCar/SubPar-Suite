@@ -75,24 +75,32 @@
 		</mah:WindowCommands>
 	</mah:MetroWindow.RightWindowCommands>
 
-	<mah:MetroAnimatedSingleRowTabControl
-			ItemsSource="{Binding Pages}"
-			SelectedItem="{Binding SelectedPage}"
-			Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow}"
-			mah:TabControlHelper.Underlined="TabPanel">
+	<Grid>
+		<mah:MetroAnimatedSingleRowTabControl
+				x:Name="ShaderInput"
+				ItemsSource="{Binding Pages}"
+				SelectedItem="{Binding SelectedPage}"
+				Style="{DynamicResource MahApps.Styles.TabControl.AnimatedSingleRow}"
+				mah:TabControlHelper.Underlined="TabPanel">
 
-		<mah:MetroAnimatedSingleRowTabControl.ItemTemplate>
-			<DataTemplate>
-				<TextBlock Text="{Binding PageName}" />
-			</DataTemplate>
-		</mah:MetroAnimatedSingleRowTabControl.ItemTemplate>
+			<mah:MetroAnimatedSingleRowTabControl.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding PageName}" />
+				</DataTemplate>
+			</mah:MetroAnimatedSingleRowTabControl.ItemTemplate>
 
-		<mah:MetroAnimatedSingleRowTabControl.ContentTemplate>
-			<DataTemplate>
-				<mah:TransitioningContentControl Content="{Binding PageInstance}"
-												 Focusable="False" />
-			</DataTemplate>
-		</mah:MetroAnimatedSingleRowTabControl.ContentTemplate>
-	</mah:MetroAnimatedSingleRowTabControl>
+			<mah:MetroAnimatedSingleRowTabControl.ContentTemplate>
+				<DataTemplate>
+					<mah:TransitioningContentControl
+						Content="{Binding PageInstance}"
+						Focusable="False" />
+				</DataTemplate>
+			</mah:MetroAnimatedSingleRowTabControl.ContentTemplate>
+		</mah:MetroAnimatedSingleRowTabControl>
+
+		<Image x:Name="ShaderOutput"
+			   IsHitTestVisible="False"
+			   Stretch="Fill" />
+	</Grid>
 
 </mah:MetroWindow>
